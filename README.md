@@ -9,7 +9,7 @@ A simple JavaScript implementation of a blockchain that demonstrates core blockc
 - Proof-of-Work implementation
 - Chain validation
 - Tamper detection
-- Transaction handling
+- Transaction handling 
 
 ## Project Structure
 

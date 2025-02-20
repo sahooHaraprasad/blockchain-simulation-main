@@ -4,19 +4,19 @@ A simple JavaScript implementation of a blockchain that demonstrates core blockc
 
 ## Features
 
-- ✨ Block creation and mining
-- 🔗 Cryptographic linking of blocks
-- ⛏️ Proof-of-Work implementation
-- ✅ Chain validation
-- 🔒 Tamper detection
-- 📝 Transaction handling
+- Block creation and mining
+- Cryptographic linking of blocks
+- Proof-of-Work implementation
+- Chain validation
+- Tamper detection
+- Transaction handling
 
 ## Project Structure
 
 ```
 blockchain-simulation/
 ├── models/
-│   ├── Block.js         # Block class implementation
+│   ├── Block.js         # Implementation of the Block class
 │   └── Blockchain.js    # Blockchain management class
 ├── utils/
 │   └── hash.js         # Hashing utility functions
@@ -87,20 +87,20 @@ while (block.hash.substring(0, difficulty) !== Array(difficulty + 1).join('0')) 
 ### How Proof-of-Work Works
 
 1. **Difficulty Target**: 
-   - Set by `this.difficulty = 2` in Blockchain class
+   - Defined by `this.difficulty = 2` in the Blockchain class
    - Requires block hash to start with '00'
 
 2. **Mining Process**:
-   - Incrementing nonce until hash matches difficulty
+   - Incrementing nonce until hash meets difficulty
    - More difficulty = more leading zeros required
    - Current setting requires 2 leading zeros
 
 3. **Computational Cost**:
    - Higher difficulty = more computation needed
    - Average attempts needed:
-     - Difficulty 1 (0): 16 attempts
-     - Difficulty 2 (00): 256 attempts
-     - Difficulty 3 (000): 4,096 attempts
+     - Difficulty 1 (0): ~16 attempts
+     - Difficulty 2 (00): ~256 attempts
+     - Difficulty 3 (000): ~4,096 attempts
 
 4. **Example Output**:
 ```
@@ -112,7 +112,7 @@ Nonce used: 123
 ## Mining Features
 
 ### Dynamic Difficulty Adjustment
-- Target mining time: 3 seconds per block
+- Target mining time: ~3 seconds per block
 - Automatic adjustment every 5 blocks
 - Difficulty increases/decreases based on mining performance
 - Minimum difficulty level: 1
@@ -135,7 +135,7 @@ while (hash.substring(0, difficulty) !== target) {
     attempts++;
     hash = calculateBlockHash();
     
-    // Additional complexity: Update timestamp every 100 attempts
+    // Update timestamp every 100 attempts
     if (attempts % 100 === 0) {
         timestamp = Date.now();
     }
